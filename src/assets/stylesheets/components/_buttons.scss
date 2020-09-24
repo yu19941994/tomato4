@@ -1,0 +1,73 @@
+@mixin btn-constructer($str, $color, $background) {
+  .btn-#{$str}, .btn-outline-#{$str}, .badge-#{$str}, .btn-lg-#{$str} {
+    color: $color;
+    background-color: $background;
+  }
+  .circlebtn-#{$str} {
+    color: $color;
+    background-color: $background;
+    &:hover, &:active{
+      background-color: #FFFCEC;
+    }
+  }
+}
+
+.btn,
+.circlebtn,
+.btn-outline,
+.badge,
+.ben-lg {
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+  font-weight: bold;
+}
+
+.btn, .btn-lg {
+  border-radius: 30px;
+  font-size: $h6;
+}
+
+.btn {
+  padding: 12px 36px;
+  @include largepc(){
+    padding: 12px 22px;
+  }
+}
+
+.btn-lg{
+  padding: 12px 100px;
+}
+
+.badge{
+  padding: 5px 22px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-size: $h6;
+  margin-right: 2px;
+}
+
+.active{
+  background-color: $primary !important;
+}
+
+.circlebtn {
+  padding: 15px;
+  border-radius: 50%;
+  font-size: $h6;
+}
+
+.btn-outline{
+  border: 2px solid $primary;
+  padding: 12px 29px;
+  border-radius: 30px;
+  font-size: $h5;
+}
+
+@include btn-constructer('primary', $light, $primary);
+@include btn-constructer('oprimary', $primary, $dark);
+@include btn-constructer('secondary-light', $light, $secondary-light);
+@include btn-constructer('white', $dark, $white);
+@include btn-constructer('success-state', $success-state, $dark);

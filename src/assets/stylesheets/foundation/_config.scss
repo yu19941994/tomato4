@@ -1,0 +1,59 @@
+// ----- Palette ----- //
+$primary: #ea5548;
+$dark: #333333;
+$secondary: #404040;
+$secondary-state: #414141;
+$secondary-dark: #404040;
+$secondary-light: #606060;
+$secondary-lighter: #acacac;
+$light: #eaeaea;
+$white: #ffffff;
+$success: #316901;
+$success-state: #b5e254;
+
+// ----- Font ----- //
+$h1: 40px;
+$h2: 24px;
+$h3: 20px;
+$h4: 16px;
+$h5: 14px;
+$h6: 12px;
+$h7: 10px;
+$text: 50px;
+
+// ----- Size ----- //
+$xs-media: 360px;
+$sm-media: 480px;
+$md-media: 768px;
+$lg-media: 1024px;
+$xl-media: 1124px;
+
+@mixin smallphone {
+  @media (max-width: $xs-media) {
+    @content;
+  }
+}
+
+@mixin smartphone {
+  @media (max-width: $sm-media) {
+    @content;
+  }
+}
+
+@mixin pad {
+  @media (max-width: $md-media) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media (max-width: $lg-media) {
+    @content;
+  }
+}
+
+@mixin largepc {
+  @media (max-width: $xl-media) {
+    @content;
+  }
+}

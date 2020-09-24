@@ -1,0 +1,81 @@
+.container {
+  padding-top: 100px;
+  // position: absolute;
+  // display: flex;
+  // justify-content: center;
+  width: 85%;
+  // margin: 0 auto;
+  transform: translateX(82px);
+  transition: 0.7s ease;
+  // @include pad(){
+  //   transform: translateX(0px);
+  // }
+  &-inside{
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+  }
+  &-bottom{
+    display:flex;
+    justify-content: center;
+    img{
+      width: 16px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.open .container {
+  transform:translateX(600px);
+  width: 35%;
+  @include pc(){
+    transform: translateX(428px);
+  }
+  @include pad(){
+    display: none;
+  }
+}
+
+h1,
+.count,
+.subtitle,
+.func-btn {
+  @include flexbox;
+}
+
+h1,
+.subtitle {
+  color: $dark;
+  text-align: center;
+}
+
+.clock {
+  margin: 50px;
+}
+
+.func-btn{
+  margin-bottom:51px;
+  .circlebtn{
+    &:first-child{
+      margin-right:75px;
+    }
+    &:last-child{
+      margin-left:75px;
+    }
+    .fa-play, .fa-pause, .fa-undo-alt{
+      color: $secondary-lighter;
+      &:active, &:hover{
+        color: $primary;
+      }
+    }
+  }
+}
+
+.badge-relax{
+  background-color: $success-state;
+  padding: 1px 16px;
+  border-radius: 8px;
+  color: $light;
+}
+
+

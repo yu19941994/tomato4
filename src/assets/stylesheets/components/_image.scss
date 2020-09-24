@@ -1,0 +1,117 @@
+.tomatoIcon{
+  position: absolute;
+  right: -35px;
+  transform: translateX(0px);
+  transition: 0.7s ease;
+  background-color: white;
+  bottom: 25px;
+  width: 90px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  z-index: 200;
+  div{
+    display: flex;
+    img{
+      padding: 10px;
+      // width: 45px;
+    }
+    .fa-arrow-right, .fa-arrow-left{
+      align-self: center;
+      padding-left: 8px;
+    }
+    .startText{
+      display: none;
+    }
+  }
+  
+}
+
+.open .tomatoIcon{
+  transform: translateX(518px);
+  transition: 0.7s ease;
+  div{
+    @include pad(){
+      justify-content: center;
+    }
+      img{
+        @include pad(){
+          width: 30px;
+        }
+      }
+      p {
+        @include pad(){
+          display: block;
+          color: $success;
+        }
+      }
+      .fa-arrow-left{
+        @include pad(){
+          display: none;
+        }
+      }
+    }
+ 
+  @include largepc(){
+    transform: translateX(416px);
+  }
+  @include pc(){
+    transform: translateX(306px);
+  }
+  @include pad(){
+    border-radius: 0;
+    bottom: 0;
+    width: 87%;
+    background-color: $success-state;
+    height: 80px;
+    transform: translateX(-40px);
+  }
+}
+
+.tomato {
+  &-count {
+    padding-bottom: 25px;
+    display: inline-block;
+  }
+  &-single {
+    width: 20px;
+    padding: 5px 12px;
+  }
+  &-container {
+    display: flex;
+    justify-content: center;
+  }
+  &-progress {
+    width: 20px;
+    padding: 0;
+  }
+}
+
+
+.circle{
+  margin: 50px auto;
+  width: 300px;
+  height: 300px; 
+  border-radius:999em;
+  background-color: $primary;
+  position: relative;
+  &-title{
+    position: absolute;
+    color: $light;
+    left: 74px;
+    top: 110px;
+  }
+  .oval{
+    margin: 50px auto;
+    width: 65px;
+    height: 45px; 
+    border-radius: 777em;
+    background-color: $success;
+    position: absolute;
+    right: 0;
+    top: -10px;
+    transform: rotate(135deg);
+  }
+}
+
+
+

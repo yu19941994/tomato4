@@ -1,0 +1,10 @@
+.count {
+  position: relative;
+  text-align: center;
+  p {
+    position: absolute;
+    border-radius: 20%;
+    top: 140px;
+    left: calc((100% - 200px + 2.5em) / 2);
+  }
+}

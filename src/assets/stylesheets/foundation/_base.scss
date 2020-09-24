@@ -1,0 +1,36 @@
+html {
+  font-family: 'Lato', sans-serif;
+  background-color: $light;
+}
+html, body {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrap{
+  position: relative;
+  display:flex;
+}
+
+ul{
+  padding-inline-start: 0;
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+span{
+  margin: 0;
+  padding: 0;
+}

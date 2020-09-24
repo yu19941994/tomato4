@@ -1,0 +1,11 @@
+// @mixin btn-constructer($str, $color, $background) {
+//   .btn-#($str) {
+//     color: $color;
+//     background-color: $background;
+//   }
+// }
+
+@mixin size($w, $h: $w) {
+  width: $w;
+  height: $h;
+}

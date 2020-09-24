@@ -1,0 +1,19 @@
+@mixin font-constructer($str, $size) {
+  .font-#{$str} {
+    font-size: $size;
+  }
+}
+
+.font{
+  font-weight: bold;
+}
+
+
+@include font-constructer('h1', $h1);
+@include font-constructer('h2', $h2);
+@include font-constructer('h3', $h3);
+@include font-constructer('h4', $h4);
+@include font-constructer('h5', $h5);
+@include font-constructer('h6', $h6);
+@include font-constructer('h7', $h7);
+@include font-constructer('text', $text);

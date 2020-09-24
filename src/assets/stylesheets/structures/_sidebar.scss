@@ -1,0 +1,252 @@
+.sidebarbox{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow-x: visible;
+  overflow-y: visible;
+  transform: translateX(calc(-100% + 82px));
+  transition: 0.7s ease;
+  z-index: 100;
+  @include largepc(){
+    transform: translateX(calc(-100% + 82px));
+    // transform: translateX(-416px);
+  }
+  @include pc(){
+    transform: translateX(calc(-100% + 82px));
+    // transform: translateX(-306px);
+  }
+
+  &.is-open {
+    transform: translateX(0)
+  }
+  .sidebar{
+    display: flex;
+    height: 100%;
+    .toolbar, .tasklist{
+      background-color: $dark;
+      height: 100%;
+    }
+    .toolbar{
+      border-left:2px solid $secondary-state;
+      width:82px;
+
+      ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        li{
+          padding: 27px ;
+        }
+      } 
+    }
+    .tasklist{
+      padding: 10px 33px;
+      width: 452px;
+      @include largepc(){
+        width: 350px;
+      }
+      @include pc(){
+        width: 240px;
+      }
+      // @include pad(){
+      //   width: 100%;
+      // }
+      p{
+        padding-bottom: 10px;
+        color: $light;
+      }
+      hr{
+        border-color: $secondary-lighter;
+      }
+      .badge-group{
+        .badge{
+          margin-top: 25px;
+        }
+      }
+      ul{
+        margin-top: 0px;
+        padding-left: 0;
+        li{
+          background-color: $secondary-state;
+          border-top: 1px solid $dark;
+          border-bottom: 1px solid $dark;
+          .listTitle{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            div{
+              display: flex;
+            }
+          }
+          .listContent,.listBtnGroup{
+            display:block;
+            padding: 0 40px;
+            // width: 360px;
+          }
+          .listBtnGroup{
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 20px;
+            @include pc () {
+              flex-direction: column;
+            }
+            .btn{
+              @include pc () {
+                margin: 5px 0;
+              }
+            }
+          }
+          .fa-check-circle, .fa-ellipsis-h, .fa-play-circle{
+            padding: 15px 10px;
+          }
+          
+          p{
+            margin: 9px;
+          }
+          .fa-ellipsis-h{
+            text-align: right;
+          }
+        }
+      }
+      input{
+        border-radius: 5px;
+        height: 34px;
+        width: 100%;
+        // width: 450px;
+        &::placeholder{
+          font-size: $h5;
+          padding-left: 15px;
+          font-weight: bold;
+        }
+      }
+      .totaltitle{
+        padding-bottom: 0px;
+        color: $secondary-lighter;
+      }
+      .addNew{
+        // display: flex;
+        // flex-direction: column;
+        .btn{
+          display: flex;
+          justify-content: center;
+        }
+      }
+      .total{
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        background-color: $secondary-dark;
+        height: 100px;
+        .tomatos, .weekly{
+          align-self:center;
+          width:100%;
+          text-align: center;
+          p{
+            &:first-child{
+              margin: 0 auto;
+              padding-top: 10px;
+              padding-bottom: 0px;
+              color: $primary;
+            }
+          }
+        }
+        .tomatos{
+          p{
+            &:first-child{
+              margin: 0 auto;
+              padding-top: 10px;
+              padding-bottom: 0px;
+            }
+            // border-right: 1px solid $secondary-lighter;
+          }
+        }
+      }
+      .chart{
+        background-color: $secondary-dark;
+        height: 100%;
+        min-height: 250px;
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 10px;
+        padding-left: 45px;
+        @include pc(){
+          padding-left: 35px;
+        }
+        @include pad(){
+          // padding-left: 82px;
+        }
+        .bar{
+          display: inline-block;
+          width: 20px;
+          height: 75px;
+          margin-right: 30px;
+          padding-left: 5px;
+          background-color: $primary;
+          
+          @include largepc(){
+            margin-right: 18px;
+          }
+          @include pc(){
+            margin-right: 2px;
+            padding-left: 5px;
+          }
+          @include pad(){
+            // padding: 0 22px;
+            margin-right: 18px;
+            width: 25px;
+          }
+          @include smartphone(){
+            margin-right: 5px;
+            width: 18px;
+          }
+        }
+      }
+      .day, .week{
+          display: flex;
+          // margin-bottom: 62px;
+          justify-content: center;
+          p{
+            margin: 0 17px;
+            @include largepc(){
+              margin: 0 11px;
+            }
+            @include pc(){
+              margin: 0 3px;
+            }
+            @include pad(){
+              padding: 0 12px;
+              // margin-bottom: 62px;
+              // margin-left: 18px;
+            }
+            @include smartphone(){
+              padding: 0 0;
+              margin-bottom: 0px;
+              margin-left: 0px;
+            }
+          }
+      }
+      .graphBtn{
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .fa-plus-circle, .fa-bars, .fa-chart-bar, .fa-music, .fa-check-circle, .fa-ellipsis-h, .fa-play-circle{
+      color: $light;
+      &:active, &:hover{
+        color: $primary
+      }
+    }
+  }
+}
+
+.open .sidebarbox {
+  transform: translateX(0px);
+  @include pad(){
+    width: 100vw;
+  }
+  .tasklist{
+    @include pad(){
+      width: 100%;
+    }
+  }
+}
